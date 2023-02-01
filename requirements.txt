@@ -1,0 +1,16 @@
+bottleneck
+#  tensorflow-gpu==2.8
+#  keras==2.8
+numpy
+matplotlib
+opencv-python
+opencv-contrib-python
+scipy
+scikit-learn
+scikit-image
+Pillow
+tqdm
+tensorboard
+dask
+dask-ml
+deepface
