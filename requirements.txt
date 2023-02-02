@@ -14,3 +14,7 @@ tensorboard
 dask
 dask-ml
 deepface
+pillow
+#pytorch==1.9.1
+
+#pip3 install torch torchvision torchaudio -f https://download.pytorch.org/whl/cu113/torch_stable.html

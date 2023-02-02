@@ -3,6 +3,9 @@ from numpy import load
 import os
 from tqdm import tqdm
 import math
+import torch
+import pickle
+from skimage.io import imread, imsave
 
 
 def create_single_FB_task():  # Feature-based modification
@@ -48,6 +51,7 @@ def calculate_b_vector(sample, eigenvalues, eigenvectors, meanvector):
 def modify_noise(task, num=10, latent_vectors=None):
     id_vectors = []
     fb_vectors = []
+    orig_vectors = []
 
     task_name = task['tn']
     alpha = task['alpha']
@@ -75,7 +79,21 @@ def modify_noise(task, num=10, latent_vectors=None):
         vec_id = np.expand_dims((alpha * meanvector + np.dot(eigenvectors, b_vector_p_id)), 0)
         id_vectors.append(vec_id)
         fb_vectors.append(vec_sem)
-    return latent_vectors, id_vectors, fb_vectors
+        orig_vectors.append(np.expand_dims(latent_vector,0))
+    return orig_vectors, id_vectors, fb_vectors
+
+
+def generate_images(vectors, task, save_path):
+    """This code is provided by   https://github.com/NVlabs/stylegan3 """
+    with open('./ffhq.pkl', 'rb') as f:
+        G = pickle.load(f)['G_ema'].cuda()
+    for i, vec in enumerate(vectors):
+        z = torch.from_numpy(vec).cuda()  # latent codes
+        img = G(z, None, truncation_psi=0.55, noise_mode='const')
+        img = (img.permute(0, 2, 3, 1) * 127.5 + 128).clamp(0, 255).to(torch.uint8)
+        npy_img = img[0].cpu().numpy()
+        imsave(fname=f'result_img/{save_path}/{task}_{str(i)}.jpg', arr=npy_img)
+    pass
 
 
 if __name__ == '__main__':
@@ -94,6 +112,9 @@ if __name__ == '__main__':
         print('Feature-Based Synthesis For => ' + task['tn'])
         latent_vectors, _, fb_vectors = modify_noise(task, num=10)
         # use StyleGAN Family and synthesize images using fb_vectors
+        display(latent_vectors,  'fb_'+task['tn']+'_orig_', 'fb')
+        display(fb_vectors,  'fb_'+task['tn']+'_new_', 'fb')
+
 
     '''facial attribute editing'''
     # create setting for facial attribute editing.
@@ -102,3 +123,5 @@ if __name__ == '__main__':
         print('Facial Attribute Editing For => ' + task['tn'])
         latent_vectors, id_vectors, _ = modify_noise(task, num=10)
         # use StyleGAN Family and synthesize images using  latent_vectors, id_vectors
+        display(latent_vectors, 'fae_' + task['tn'] + '_orig_', 'fae')
+        display(id_vectors, 'fae_' + task['tn'] + '_new_', 'fae')
