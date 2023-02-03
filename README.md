@@ -18,6 +18,15 @@
 
 ```
 Please cite this work as:
+@misc{https://doi.org/10.48550/arxiv.2302.00908,
+  doi = {10.48550/ARXIV.2302.00908},
+  url = {https://arxiv.org/abs/2302.00908},
+  author = {Fard, Ali Pourramezan and Mahoor, Mohammad H. and Lamer, Sarah Ariel and Sweeny, Timothy},
+  title = {GANalyzer: Analysis and Manipulation of GANs Latent Space for Controllable Face Synthesis},
+  publisher = {arXiv},
+  year = {2023},
+}
+
 
 ```
 
@@ -42,6 +51,15 @@ Please cite this work as:
 
 ```
 Please cite this work as:
+@misc{https://doi.org/10.48550/arxiv.2302.00908,
+  doi = {10.48550/ARXIV.2302.00908},
+  url = {https://arxiv.org/abs/2302.00908},
+  author = {Fard, Ali Pourramezan and Mahoor, Mohammad H. and Lamer, Sarah Ariel and Sweeny, Timothy},
+  title = {GANalyzer: Analysis and Manipulation of GANs Latent Space for Controllable Face Synthesis},
+  publisher = {arXiv},
+  year = {2023},
+}
+
 
 ```
 
