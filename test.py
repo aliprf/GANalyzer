@@ -84,7 +84,10 @@ def modify_noise(task, num=10, latent_vectors=None):
 
 
 def generate_images(vectors, task, save_path):
-    """This code is provided by   https://github.com/NVlabs/stylegan3 """
+    """This code is provided by   https://github.com/NVlabs/stylegan3
+        IF YOU ARE USING THIS FUNCTION, YOU NEED TO FOLLOW StyleGAN3 Licence:
+        https://github.com/NVlabs/stylegan3/blob/main/LICENSE.txt
+    """
     with open('./ffhq.pkl', 'rb') as f:
         G = pickle.load(f)['G_ema'].cuda()
     for i, vec in enumerate(vectors):
