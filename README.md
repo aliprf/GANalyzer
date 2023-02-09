@@ -10,6 +10,7 @@
 
 
 #### Link to the pre-print:
+https://arxiv.org/abs/2302.00908
 
 #### Link to the paper:
 
@@ -41,6 +42,13 @@ Please cite this work as:
 
 
 ## Creating Environment
+```
+$ conda env create -f environment.yml
+$ conda activate ganalyzer
+$ pip install -r requirements.txt
+
+```
+
 
 ## Facial Attribute Editing
 
