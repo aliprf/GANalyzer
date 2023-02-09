@@ -52,22 +52,44 @@ $ pip install -r requirements.txt
 
 
 ## Facial Attribute Editing
+In the first step, we need to create the modification task using test.py->create_single_FAE_task() function. The following tasks are generated as default. You can modify each task according to explaination in the paper.
+```
+  fae_tasks = [{'tn': 'ANGRY', 'alpha': 2.5, 'beta': 1.0},
+                 {'tn': 'BLACK', 'alpha': 2.0, 'beta': 1.0},
+                 {'tn': 'FEMALE', 'alpha': 3.5, 'beta': 1.0},
+                 {'tn': 'MALE', 'alpha': 3.0, 'beta': 1.0},
+                 {'tn': 'OLD', 'alpha': 4.0, 'beta': 1.0},
+                 {'tn': 'YOUNG', 'alpha': 4.0, 'beta': 1.0},
+                 ]
+```
+After creating the tasks, you can pass each task to test.py->modify_noise() function and modify the arbitrary input latent vectors.
 
 ## Feature-based Synthesis
+In the first step, we need to create the modification task using test.py->create_single_FB_task() function. The following tasks are generated as default. You can modify each task according to explaination in the paper.
+```
+   fb_tasks = [{'tn': 'ANGRY', 'alpha': 1.0, 'beta': 0.25},
+                {'tn': 'BLACK', 'alpha': 1.0, 'beta': 0.25},
+                {'tn': 'FEMALE', 'alpha': 1.0, 'beta': 0.25},
+                {'tn': 'MALE', 'alpha': 1.0, 'beta': 0.25},
+                {'tn': 'OLD', 'alpha': 1.0, 'beta': 0.25},
+                {'tn': 'YOUNG', 'alpha': 1.0, 'beta': 0.25},
+                ]
+```
+After creating the tasks, you can pass each task to test.py->modify_noise() function and modify the arbitrary input latent vectors.
+
 
 ## Image Generation
-Image generation function located in 'test.py->generate_images()' is provided by stylegan3 repo in the following address:
+GANalyzer is a framework designed for latent space modification, and no face synthesis is part of it. We use StylGAN3 for image synthesis. Hence, the image generation function which is located in 'test.py->generate_images()' is provided by stylegan3 repo in the following address:
 ```
 https://github.com/NVlabs/stylegan3
 ```
 
 ```diff
-! IF YOU ARE USING THIS FUNCTION, YOU NEED TO FOLLOW StyleGAN3 Licence:
+! IF YOU USE THIS FUNCTION, YOU NEED TO FOLLOW StyleGAN3 Licence:
 https://github.com/NVlabs/stylegan3/blob/main/LICENSE.txt
 ```
 
-
-
+### Reference:
 ```
 Please cite this work as:
 @misc{https://doi.org/10.48550/arxiv.2302.00908,
