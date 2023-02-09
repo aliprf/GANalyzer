@@ -32,6 +32,7 @@ Please cite this work as:
 ```
 
 ##  Qualitative Results Evaluation:
+The following are some examples from the paper, showing the performance of GANalyzer for both facial attribute editing, and intensity-based modification.
 
 #### Facial Attribute Editing:
 
@@ -54,6 +55,16 @@ $ pip install -r requirements.txt
 
 ## Feature-based Synthesis
 
+## Image Generation
+Image generation function located in 'test.py->generate_images()' is provided by stylegan3 repo in the following address:
+```
+https://github.com/NVlabs/stylegan3
+```
+
+```diff
+! IF YOU ARE USING THIS FUNCTION, YOU NEED TO FOLLOW StyleGAN3 Licence:
+https://github.com/NVlabs/stylegan3/blob/main/LICENSE.txt
+```
 
 
 
