@@ -15,7 +15,7 @@ https://arxiv.org/abs/2302.00908
 #### Link to the paper:
 
 #### Link to the paper-with-codes:
-
+https://paperswithcode.com/paper/ganalyzer-analysis-and-manipulation-of-gans
 
 ```
 Please cite this work as:
