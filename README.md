@@ -88,6 +88,7 @@ https://github.com/NVlabs/stylegan3
 ! IF YOU USE THIS FUNCTION, YOU NEED TO FOLLOW StyleGAN3 Licence:
 https://github.com/NVlabs/stylegan3/blob/main/LICENSE.txt
 ```
+you need to download ffhq.pkl file following the documentation provided by stylegan3 repo.
 
 ### Reference:
 ```
