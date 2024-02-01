@@ -1,0 +1,20 @@
+bottleneck
+#  tensorflow-gpu==2.8
+#  keras==2.8
+numpy
+matplotlib
+opencv-python
+opencv-contrib-python
+scipy
+scikit-learn
+scikit-image
+Pillow
+tqdm
+tensorboard
+dask
+dask-ml
+deepface
+pillow
+#pytorch==1.9.1
+
+#pip3 install torch torchvision torchaudio -f https://download.pytorch.org/whl/cu113/torch_stable.html

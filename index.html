@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GANalyzer README</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            padding: 20px;
+            background-color: #1a1a1a; /* Dark Background Color */
+            color: #dcdcdc; /* Light Text Color */
+        }
+
+        code {
+            background-color: #333; /* Dark Gray Code Background */
+            border: 1px solid #555; /* Border Color */
+            border-left: 3px solid #FC6736; /* Accent Color */
+            color: #EEEDEB; /* Light Code Text Color */
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            overflow-x: auto;
+        }
+
+        pre {
+            overflow: auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        blockquote {
+            background: #2d2d2d; /* Darker Gray for Blockquote */
+            border-left: 10px solid #FC6736;
+            margin: 1.5em 10px;
+            padding: 0.5em 10px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #FC6736;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 3em;
+            color: #f0f0f0; /* Light Text Color for Heading */
+        }
+
+        h2 {
+            font-size: 2.5em;
+            color: #f0f0f0; /* Light Text Color for Heading */
+        }
+
+        h3 {
+            font-size: 2em;
+            color: #f0f0f0; /* Light Text Color for Heading */
+        }
+
+        h4 {
+            font-size: 1.8em;
+            color: #f0f0f0; /* Light Text Color for Heading */
+        }
+
+        h5 {
+            font-size: 1.5em;
+            color: #f0f0f0; /* Light Text Color for Heading */
+        }
+
+        h6 {
+            font-size: 1.2em;
+            color: #f0f0f0; /* Light Text Color for Heading */
+        }
+
+        strong {
+            color: #FC6736;
+        }
+
+        a {
+            color: #FC6736;
+            transition: color 0.5s;
+        }
+
+        a:hover {
+            color: #f45026;
+        }
+
+        #dark-mode-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 20px;
+            cursor: pointer;
+            color: #FC6736;
+        }
+    </style>
+</head>
+
+<body class="dark-mode">
+
+    <div id="dark-mode-toggle" onclick="toggleDarkMode()">🌙</div>
+
+    <script>
+        function toggleDarkMode() {
+            const body = document.body;
+            body.classList.toggle("dark-mode");
+        }
+    </script>
+
+    <h1>GANalyzer</h1>
+
+
+    <h2>GANalyzer: Analysis and Manipulation of GANs Latent Space for Controllable Face Synthesis</h2>
+
+    <ul>
+        <li><strong>Link to the pre-print:</strong> <a href="https://arxiv.org/abs/2302.00908">https://arxiv.org/abs/2302.00908</a></li>
+        <li><strong>Link to the paper with codes:</strong> <a href="https://paperswithcode.com/paper/ganalyzer-analysis-and-manipulation-of-gans">https://paperswithcode.com/paper/ganalyzer-analysis-and-manipulation-of-gans</a></li>
+    </ul>
+
+    <p><strong>Please cite this work as:</strong></p>
+    <pre>
+        <code>
+@misc{https://doi.org/10.48550/arxiv.2302.00908,
+  doi = {10.48550/ARXIV.2302.00908},
+  url = {https://arxiv.org/abs/2302.00908},
+  author = {Fard, Ali Pourramezan and Mahoor, Mohammad H. and Lamer, Sarah Ariel and Sweeny, Timothy},
+  title = {GANalyzer: Analysis and Manipulation of GANs Latent Space for Controllable Face Synthesis},
+  publisher = {arXiv},
+  year = {2023},
+}
+        </code>
+    </pre>
+
+    <h2>Qualitative Results Evaluation:</h2>
+
+    <p>Explore the performance of GANalyzer for facial attribute editing and intensity-based modification.</p>
+
+    <h3>Facial Attribute Editing:</h3>
+    <img src="https://github.com/aliprf/GANalyzer/blob/master/img/all.png?raw=true" alt="Sample All">
+
+    <h3>Intensity-Based Attribute Editing:</h3>
+    <img src="https://github.com/aliprf/GANalyzer/blob/master/img/intensirt.png?raw=true" alt="Intensity-based">
+
+    <h2>Creating Environment</h2>
+
+    <pre>
+        <code>
+$ conda env create -f environment.yml
+$ conda activate ganalyzer
+$ pip install -r requirements.txt
+        </code>
+    </pre>
+
+    <h2>Facial Attribute Editing</h2>
+
+    <p>To create a modification task, use <code>test.py-&gt;create_single_FAE_task()</code>. Default tasks are provided, and you can modify each task as explained in the paper.</p>
+
+    <pre>
+        <code>
+fae_tasks = [
+    {'tn': 'ANGRY', 'alpha': 2.5, 'beta': 1.0},
+    {'tn': 'BLACK', 'alpha': 2.0, 'beta': 1.0},
+    {'tn': 'FEMALE', 'alpha': 3.5, 'beta': 1.0},
+    {'tn': 'MALE', 'alpha': 3.0, 'beta': 1.0},
+    {'tn': 'OLD', 'alpha': 4.0
+    </code>
+    </pre>
+
+    <p>After creating tasks, pass each task to <code>test.py->modify_noise()</code> to modify arbitrary input latent vectors.</p>
+
+    <h2>Feature-based Synthesis</h2>
+
+    <p>Create a modification task using <code>test.py->create_single_FB_task()</code>. Default tasks are provided, and you can modify each task as explained in the paper.</p>
+
+    <pre>
+        <code>
+fb_tasks = [
+    {'tn': 'ANGRY', 'alpha': 1.0, 'beta': 0.25},
+    {'tn': 'BLACK
+    {'tn': 'BLACK', 'alpha': 1.0, 'beta': 0.25},
+{'tn': 'FEMALE', 'alpha': 1.0, 'beta': 0.25},
+{'tn': 'MALE', 'alpha': 1.0, 'beta': 0.25},
+{'tn': 'OLD', 'alpha': 1.0, 'beta': 0.25},
+{'tn': 'YOUNG', 'alpha': 1.0, 'beta': 0.25},
+]
+</code>
+</pre>
+
+    <p>After creating tasks, pass each task to <code>test.py->modify_noise()</code> to modify arbitrary input latent vectors.</p>
+
+    <h2>Image Generation</h2>
+
+    <p>GANalyzer focuses on latent space modification, and image synthesis is performed using StylGAN3. The image generation function in <code>test.py->generate_images()</code> is provided by the <a href="https://github.com/NVlabs/stylegan3">StyleGAN3 repo</a>.</p>
+
+    <pre>
+        <code>
+! IF YOU USE THIS FUNCTION, YOU NEED TO FOLLOW StyleGAN3 Licence:
+[StyleGAN3 License](https://github.com/NVlabs/stylegan3/blob/main/LICENSE.txt)
+        </code>
+    </pre>
+
+    <p>Download <code>ffhq.pkl</code> following the documentation provided by the StyleGAN3 repo.</p>
+
+    <h3>Reference:</h3>
+
+    <pre>
+        <code>
+@misc{https://doi.org/10.48550/arxiv.2302.00908,
+  doi = {10.48550/ARXIV.2302.00908},
+  url = {https://arxiv.org/abs/2302.00908},
+  author = {Fard, Ali Pourramezan and Mahoor, Mohammad H. and Lamer, Sarah Ariel and Sweeny, Timothy},
+  title = {GANalyzer: Analysis and Manipulation of GANs Latent Space for Controllable Face Synthesis},
+  publisher = {arXiv},
+  year = {2023},
+}
+        </code>
+    </pre>
+
+    <p><strong>Please STAR the repo if you find it useful.</strong></p>
+
+</body>
+
+</html>
+
+
+
+
