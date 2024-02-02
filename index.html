@@ -7,19 +7,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GANalyzer README</title>
     <style>
-        body {
+         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            background-color: #F4F2DE;
+            color: #0D9276;
             margin: 20px;
-            padding: 20px;
-            background-color: #F2EFE5; /* Dark Background Color */
-            color: #0D9276; /* Light Text Color */
         }
 
+        header {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #6D2932;
+        }
+
+
+        #main-content {
+             max-width: 1200px;
+            margin: auto;
+            margin-top:20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
         code {
-            background-color: #C7C8CC; /* Dark Gray Code Background */
-            border: 1px solid #555; /* Border Color */
-            border-left: 3px solid #FC6736; /* Accent Color */
+            background-color: #FFDDCC; /* Dark Gray Code Background */
+            border: 1px solid #F0F0F0; /* Border Color */
+            border-left: 3px solid #860A35; /* Accent Color */
             color: #0C2D57; /* Light Code Text Color */
             display: block;
             margin: 10px 0;
@@ -32,7 +46,9 @@
         }
 
         img {
-            max-width: 100%;
+            display: block;
+            margin: 0 auto;
+            max-width: 70%;
             height: auto;
         }
 
@@ -49,23 +65,23 @@
         h4,
         h5,
         h6 {
-            color: #FC6736;
+            color: #860A35;
             text-align: center;
         }
 
         h1 {
             font-size: 3em;
-            color: #436850; /* Light Text Color for Heading */
+            color: #461959; /* Light Text Color for Heading */
         }
 
         h2 {
             font-size: 2.5em;
-            color: #436850; /* Light Text Color for Heading */
+            color: #7A316F; /* Light Text Color for Heading */
         }
 
         h3 {
             font-size: 2em;
-            color: #436850; /* Light Text Color for Heading */
+            color: #7A316F; /* Light Text Color for Heading */
         }
 
         h4 {
@@ -96,56 +112,22 @@
             color: #f45026;
         }
 
-        #dark-mode-toggle {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            font-size: 20px;
-            cursor: pointer;
-            color: #FC6736;
+  p {
+            color: #555;
         }
     </style>
 </head>
 
-<body class="dark-mode">
+<body>
 
-    <div id="dark-mode-toggle" onclick="toggleDarkMode()">🌙</div>
+  <header>
+        <h1>GANalyzer: Analysis and Manipulation of GANs Latent Space for Controllable Face Synthesis</h1>
+    </header>
 
-    <script>
-        function toggleDarkMode() {
-            const body = document.body;
-            body.classList.toggle("dark-mode");
-        }
-    </script>
+  
 
-    <h1>GANalyzer</h1>
-
-
-    <h2>GANalyzer: Analysis and Manipulation of GANs Latent Space for Controllable Face Synthesis</h2>
-
-    <ul>
-        <li><strong>Link to the Github:</strong> <a href="https://github.com/aliprf/GANalyzer">https://github.com/aliprf/GANalyzer</a></li> 
-    
-        <li><strong>Link to the pre-print:</strong> <a href="https://arxiv.org/abs/2302.00908">https://arxiv.org/abs/2302.00908</a></li>
-        
-        <li><strong>Link to the paper with codes:</strong> <a href="https://paperswithcode.com/paper/ganalyzer-analysis-and-manipulation-of-gans"> paperswithcode</a></li>
-        
-    </ul>
-
-    <p><strong>Please cite this work as:</strong></p>
-    <pre>
-        <code>
-@misc{https://doi.org/10.48550/arxiv.2302.00908,
-  doi = {10.48550/ARXIV.2302.00908},
-  url = {https://arxiv.org/abs/2302.00908},
-  author = {Fard, Ali Pourramezan and Mahoor, Mohammad H. and Lamer, Sarah Ariel and Sweeny, Timothy},
-  title = {GANalyzer: Analysis and Manipulation of GANs Latent Space for Controllable Face Synthesis},
-  publisher = {arXiv},
-  year = {2023},
-}
-        </code>
-    </pre>
-
+     <div id="main-content">
+     
     <h2>Qualitative Results Evaluation:</h2>
 
     <p>Explore the performance of GANalyzer for facial attribute editing and intensity-based modification.</p>
@@ -156,6 +138,8 @@
     <h3>Intensity-Based Attribute Editing:</h3>
     <img src="https://github.com/aliprf/GANalyzer/blob/master/img/intensirt.png?raw=true" alt="Intensity-based">
 
+</div>
+ <div id="main-content">
     <h2>Creating Environment</h2>
 
     <pre>
@@ -166,6 +150,11 @@ $ pip install -r requirements.txt
         </code>
     </pre>
 
+
+ </div>
+
+     <div id="main-content">
+     
     <h2>Facial Attribute Editing</h2>
 
     <p>To create a modification task, use <code>test.py-&gt;create_single_FAE_task()</code>. Default tasks are provided, and you can modify each task as explained in the paper.</p>
@@ -183,6 +172,11 @@ fae_tasks = [
 
     <p>After creating tasks, pass each task to <code>test.py->modify_noise()</code> to modify arbitrary input latent vectors.</p>
 
+
+ </div>
+
+     <div id="main-content">
+     
     <h2>Feature-based Synthesis</h2>
 
     <p>Create a modification task using <code>test.py->create_single_FB_task()</code>. Default tasks are provided, and you can modify each task as explained in the paper.</p>
@@ -203,6 +197,9 @@ fb_tasks = [
 
     <p>After creating tasks, pass each task to <code>test.py->modify_noise()</code> to modify arbitrary input latent vectors.</p>
 
+ </div>
+
+     <div id="main-content">
     <h2>Image Generation</h2>
 
     <p>GANalyzer focuses on latent space modification, and image synthesis is performed using StylGAN3. The image generation function in <code>test.py->generate_images()</code> is provided by the <a href="https://github.com/NVlabs/stylegan3">StyleGAN3 repo</a>.</p>
@@ -213,8 +210,11 @@ fb_tasks = [
 [StyleGAN3 License](https://github.com/NVlabs/stylegan3/blob/main/LICENSE.txt)
         </code>
     </pre>
+ <p>Download <code>ffhq.pkl</code> following the documentation provided by the StyleGAN3 repo.</p>
+ </div>
 
-    <p>Download <code>ffhq.pkl</code> following the documentation provided by the StyleGAN3 repo.</p>
+     <div id="main-content">
+   
 
     <h3>Reference:</h3>
 
@@ -231,12 +231,23 @@ fb_tasks = [
         </code>
     </pre>
 
-    <p><strong>Please STAR the repo if you find it useful.</strong></p>
+ </div>
+
+
+
+   <div id="main-content">
+    <ul>
+        <li><strong>Link to the Github:</strong> <a href="https://github.com/aliprf/GANalyzer">https://github.com/aliprf/GANalyzer</a></li> 
+    
+        <li><strong>Link to the pre-print:</strong> <a href="https://arxiv.org/abs/2302.00908">https://arxiv.org/abs/2302.00908</a></li>
+        
+        <li><strong>Link to the paper with codes:</strong> <a href="https://paperswithcode.com/paper/ganalyzer-analysis-and-manipulation-of-gans"> paperswithcode</a></li>
+        
+    </ul>
+    
+    </div>
+    
 
 </body>
 
 </html>
-
-
-
-
