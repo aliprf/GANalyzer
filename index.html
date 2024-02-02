@@ -124,11 +124,16 @@
         <h1>GANalyzer: Analysis and Manipulation of GANs Latent Space for Controllable Face Synthesis</h1>
     </header>
 
-  
+     <div id="main-content">
+    <h2>Introduction</h2>
+         
+  <p> Generative Adversarial Networks (GANs) are capable of synthesizing high-quality facial images. Despite their success, GANs do not provide any information about the relationship between the input vectors and the generated images. Currently, facial GANs are trained on imbalanced datasets, which generate less diverse images. For example, more than 77% of 100K images that we randomly synthesized using the StyleGAN3 are classified as Happy, and only around 3% are Angry. The problem even becomes worse when a mixture of facial attributes is desired: less than 1% of the generated samples are Angry Woman, and only around 2% are Happy Black. To address these problems, this paper proposes a framework, called GANalyzer, for the analysis, and manipulation of the latent space of well-trained GANs. GANalyzer consists of a set of transformation functions designed to manipulate latent vectors for a specific facial attribute such as facial Expression, Age, Gender, and Race. We analyze facial attribute entanglement in the latent space of GANs and apply the proposed transformation for editing the disentangled facial attributes. Our experimental results demonstrate the strength of GANalyzer in editing facial attributes and generating any desired faces. We also create and release a balanced photo-realistic human face dataset. Our code is publicly available on GitHub.
+</p>
+</div>
 
      <div id="main-content">
      
-    <h2>Qualitative Results Evaluation:</h2>
+    <h2>Qualitative Results Evaluation</h2>
 
     <p>Explore the performance of GANalyzer for facial attribute editing and intensity-based modification.</p>
 
@@ -139,6 +144,8 @@
     <img src="https://github.com/aliprf/GANalyzer/blob/master/img/intensirt.png?raw=true" alt="Intensity-based">
 
 </div>
+
+
  <div id="main-content">
     <h2>Creating Environment</h2>
 
