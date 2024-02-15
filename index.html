@@ -9,7 +9,7 @@
     <style>
          body {
             font-family: 'Arial', sans-serif;
-            background-color: #F4F2DE;
+            background-color: #F5EEE6;
             color: #0D9276;
             margin: 20px;
         }
@@ -17,7 +17,7 @@
         header {
             text-align: center;
             margin-bottom: 25px;
-            color: #6D2932;
+            color: #4F6F52;
         }
 
 
@@ -65,38 +65,38 @@
         h4,
         h5,
         h6 {
-            color: #860A35;
+            color: #607274;
             text-align: center;
         }
 
         h1 {
             font-size: 3em;
-            color: #461959; /* Light Text Color for Heading */
+            color: #607274; /* Light Text Color for Heading */
         }
 
         h2 {
             font-size: 2.5em;
-            color: #7A316F; /* Light Text Color for Heading */
+            color: #607274; /* Light Text Color for Heading */
         }
 
         h3 {
             font-size: 2em;
-            color: #7A316F; /* Light Text Color for Heading */
+            color: #607274; /* Light Text Color for Heading */
         }
 
         h4 {
             font-size: 1.8em;
-            color: #436850; /* Light Text Color for Heading */
+            color: #607274; /* Light Text Color for Heading */
         }
 
         h5 {
             font-size: 1.5em;
-            color: #436850; /* Light Text Color for Heading */
+            color: #607274; /* Light Text Color for Heading */
         }
 
         h6 {
             font-size: 1.2em;
-            color: #436850; /* Light Text Color for Heading */
+            color: #607274; /* Light Text Color for Heading */
         }
 
         strong {
@@ -127,7 +127,8 @@
      <div id="main-content">
     <h2>Introduction</h2>
          
-  <p> Generative Adversarial Networks (GANs) are capable of synthesizing high-quality facial images. Despite their success, GANs do not provide any information about the relationship between the input vectors and the generated images. Currently, facial GANs are trained on imbalanced datasets, which generate less diverse images. For example, more than 77% of 100K images that we randomly synthesized using the StyleGAN3 are classified as Happy, and only around 3% are Angry. The problem even becomes worse when a mixture of facial attributes is desired: less than 1% of the generated samples are Angry Woman, and only around 2% are Happy Black. To address these problems, this paper proposes a framework, called GANalyzer, for the analysis, and manipulation of the latent space of well-trained GANs. GANalyzer consists of a set of transformation functions designed to manipulate latent vectors for a specific facial attribute such as facial Expression, Age, Gender, and Race. We analyze facial attribute entanglement in the latent space of GANs and apply the proposed transformation for editing the disentangled facial attributes. Our experimental results demonstrate the strength of GANalyzer in editing facial attributes and generating any desired faces. We also create and release a balanced photo-realistic human face dataset. Our code is publicly available on GitHub.
+  <p> Recent advancements in Generative Adversarial Networks (GANs) have significantly improved face synthesis quality, yet the lack of transparency on the mapping of input latent vectors to synthesized images limits their application. To address this issue, we propose GANalyzer, a framework for the interpretation, and manipulation of the latent space of well-trained GANs. GANalyzer can manipulate latent vectors for single, compound, and disentangled modifications of Facial Emotion, Age, Gender, and Racial Prototypicality. We utilized GANalyzer for two main applications: Facial Attribute Editing (FAE) and Feature-Based Synthesis (FBS). For FAE, GANalyzer modifies one or more facial attributes while preserving the identity of the face. In contrast, for FBS, GANalyzer manipulates a randomly sampled latent vector such that its corresponding image has a set of specified facial attributes. Our extensive experimentation demonstrates the performance of the GANalyzer in both FAE and FBS tasks. Furthermore, building upon the capability of GANalyzer in FBS, we create and release a balanced photo-realistic human face dataset with 23 subsets containing the least appearing combinations of facial attributes. Our dataset contributes various deep learning applications including facial expression, age, race, and gender recognition. Upon publication, both the dataset and code will be publicly available.
+
 </p>
 </div>
 
